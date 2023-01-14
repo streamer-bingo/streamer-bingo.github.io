@@ -90,11 +90,14 @@ nav h1 {
 
 main {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #startup {
   width: 400px;
-  padding: 20px 60px;
+  padding: 20px 0;
   position: absolute;
   margin: 0 calc(calc(100vw/2) - 260px);
   display: flex;
@@ -110,6 +113,7 @@ main {
 
 #startup ol {
   margin-bottom: 30px;
+  padding-left: 20px;
 }
 
 #startup li {
@@ -118,7 +122,7 @@ main {
 
 #creation {
   height: calc(100vh - 110px);
-  width: max(40%, 370px);
+  width: max(40%, 350px);
   margin: 0 auto;
   padding-bottom: 20px;
   display: flex;
@@ -143,7 +147,7 @@ main {
   width: max(100%, 350px);
   padding: 4px 9px;
   border: 2px var(--color-darkgray2) solid;
-  background-color: var(--color-darkgray);
+  background-color: var(--color-darkgray1);
   color: var(--color-white);
   outline: none;
   border-radius: 5px;
@@ -168,6 +172,7 @@ main {
   grid-template-columns: repeat(5, 120px);
   grid-template-rows: repeat(5, 120px);
   grid-gap: 10px;
+  font-size: 16px;
 }
 
 #board_screen article {
@@ -183,6 +188,7 @@ main {
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  overflow: hidden;
 }
 
 #board_screen article p {
@@ -202,7 +208,7 @@ main {
   height: 60px;
   width: 440px;
   padding: 4px 15px;
-  margin-top: 120px;
+  margin-top: 100px;
   position: relative;
   display: flex;
   flex-direction: row;
@@ -219,9 +225,7 @@ main {
 #invite_link p {
   width: 400px;
   margin: 0;
-  padding: 15px 0;
   font-size: 20px;
-  background-color: var(--color-darkgray0);
   white-space: nowrap;
   overflow: hidden;
   pointer-events: none;
@@ -248,7 +252,7 @@ main {
   content: "";
   height: 100%;
   width: 30px;
-  background-color: var(--color-darkgray0);
+  background-color: var(--color-darkgray1);
   filter: blur(3px);
 }
 
@@ -392,13 +396,38 @@ main {
     justify-content: center;
   }
 
+  #startup {
+    width: 95%;
+  }
+
   #board {
     padding-top: 20px;
   }
 
   #board_screen {
-    grid-template-columns: repeat(5, 65px);
-    grid-template-rows: repeat(5, 65px);
-    grid-gap: 5px;
+    grid-template-columns: repeat(5, 70px);
+    grid-template-rows: repeat(5, 70px);
+    grid-gap: 2px;
+    font-size: 12px;
+  }
+
+  #board_screen article {
+    height: 69px;
+    padding: 3px;
+    box-sizing: border-box;
+  }
+
+  #board_screen article.center_card {
+    font-size: 24px;
+  }
+
+  #invite_link {
+    width: 100%;
+    height: 50px;
+    margin-top: 60px;
+  }
+
+  #invite_link p {
+    font-size: 16px;
   }
 }
