@@ -64,7 +64,7 @@ function playerGotBingo() {
   shareButton.innerText = "Share Results";
   shareButton.addEventListener("click", () => {
     if (shareButton.children[0].tagName == "LABEL") {
-      let copyText = "BINGO! in " + finalTime + "\n\n";
+      let copyText = "BINGO! in " + finalTime + "\n";
       for (let i = 0; i < board_values.length;i++) {
         if (i % 5 == 0) {
           copyText += "\n";
@@ -250,7 +250,7 @@ window.addEventListener("load", () => {
     setupBoard();
 
     // Add url to "Copy Field"
-    let link = location.href.substr(0, 50);
+    let link = location.href;
     document.getElementById("invite_link").children[0].innerText = link;
   }
 });
