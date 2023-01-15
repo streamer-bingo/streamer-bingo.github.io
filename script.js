@@ -16,7 +16,7 @@ add_more_button.addEventListener("click", () => {
 
   let new_input = document.createElement("input");
   new_input.type = "text";
-  new_input.name = "field" + (last_number + 1);
+  new_input.name = "f" + (last_number + 1);
 
   form.insertBefore(new_input, add_more_button);
 });
@@ -203,7 +203,7 @@ function setupBoard() {
 
   // Get inputs from url
   let input_string = location.search;
-  let inputs_array = decodeURIComponent(input_string.replace(/(field[0-9]+)/g, "")).split("&=");
+  let inputs_array = decodeURIComponent(input_string.replace(/(f[0-9]+)/g, "")).split("&=");
 
   // Cleans the inputs
   for (let i = 0; i<inputs_array.length; i++) {
@@ -229,7 +229,7 @@ function setupBoard() {
     let card_count = 0;
     while(card_count < 25) {
       let inputs_left = clean_inputs.length;
-      if(inputs_left == 12) {
+      if(card_count == 12) {
         board_screen.appendChild(createCard("", 95));
         card_count++
       }
